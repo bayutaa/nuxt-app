@@ -1,0 +1,75 @@
+<template>
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <NuxtLink to="/" class="text-xl font-bold text-gray-900">
+            MyApp
+          </NuxtLink>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <NuxtLink 
+              to="/" 
+              class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition"
+              :class="{ 'text-indigo-600 font-semibold': $route.path === '/' }"
+            >
+              Home
+            </NuxtLink>
+            <NuxtLink 
+              to="/" 
+              class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition"
+              :class="{ 'text-indigo-600 font-semibold': $route.path === '/about' }"
+            >
+              About
+            </NuxtLink>
+            <NuxtLink 
+              to="/" 
+              class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition"
+              :class="{ 'text-indigo-600 font-semibold': $route.path === '/services' }"
+            >
+              Services
+            </NuxtLink>
+            <NuxtLink 
+              to="/" 
+              class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition"
+              :class="{ 'text-indigo-600 font-semibold': $route.path === '/contact' }"
+            >
+              Contact
+            </NuxtLink>
+            <NuxtLink 
+              to="/login" 
+              class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition"
+              :class="{ 'text-indigo-600 font-semibold': $route.path === '/login' }"
+            >
+              Login
+            </NuxtLink>
+          </div>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile menu -->
+      <div v-show="mobileMenuOpen" class="md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+          <NuxtLink to="/" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Home</NuxtLink>
+          <NuxtLink to="/" class="block px-3 py-2 text-gray-600 hover:text-gray-900">About</NuxtLink>
+          <NuxtLink to="/" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Services</NuxtLink>
+          <NuxtLink to="/" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Contact</NuxtLink>
+        </div>
+      </div>
+    </div>
+  </nav>
+</template>
+
+<script setup>
+const mobileMenuOpen = ref(false)
+</script>
