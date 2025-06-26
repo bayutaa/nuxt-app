@@ -3,8 +3,12 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center">
-          <NuxtLink to="/" class="text-xl font-bold text-gray-900">
-            MyApp
+          <NuxtLink to="/" class="flex items-center">
+            <img 
+              src="/images/image icon rssa.png" 
+              alt="Logo" 
+              class="h-13 w-auto"
+            >
           </NuxtLink>
         </div>
         <div class="hidden md:block">
@@ -17,21 +21,21 @@
               Home
             </NuxtLink>
             <NuxtLink 
-              to="/" 
+              to="/about" 
               class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition"
               :class="{ 'text-indigo-600 font-semibold': $route.path === '/about' }"
             >
               About
             </NuxtLink>
             <NuxtLink 
-              to="/" 
+              to="/healthservices" 
               class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition"
-              :class="{ 'text-indigo-600 font-semibold': $route.path === '/services' }"
+              :class="{ 'text-indigo-600 font-semibold': $route.path === '/healthservices' }"
             >
-              Services
+              Health Services
             </NuxtLink>
             <NuxtLink 
-              to="/" 
+              to="/contact" 
               class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition"
               :class="{ 'text-indigo-600 font-semibold': $route.path === '/contact' }"
             >

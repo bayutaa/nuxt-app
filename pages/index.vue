@@ -1,56 +1,77 @@
 <template>
-  <!-- Main Content -->
-    <main class="flex-1 flex flex-col items-center justify-center px-4 py-12">
-      <!-- Welcome Section -->
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-          Selamat Datang
-        </h2>
-        <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-          Website ini menampilkan pemandangan indah dan konten menarik untuk pengunjung
-        </p>
-      </div>
+  <main class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex-1 flex flex-col">
+    <!-- Hero Section with Background Image -->
+    <div class="relative h-[80vh] bg-cover bg-center bg-no-repeat" style="background-image: url('/images/medical-bg.png');">
+      <!-- Background Overlay -->
+      <div class="absolute inset-0 bg-black/50"></div>
+      
+      <!-- Content Container -->
+      <div class="relative z-10 flex flex-col items-center justify-center h-full px-4 py-12">
+        <!-- Welcome Section -->
+        <div class="w-full max-w-6xl mx-auto mb-12">
+          <!-- Title Section -->
+          <div class="text-center mb-8">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              RSUD Dr. Saiful Anwar
+            </h2>
+            <p class="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto mb-2">
+              Kami menyediakan Berbagai Layanan Unggulan Untuk Meningkatkan Kesehatan Anda
+            </p>
+          </div>
 
-      <!-- Main Image Section -->
-      <div class="w-full max-w-4xl mx-auto mb-12">
-        <div class="relative overflow-hidden rounded-2xl shadow-2xl">
-          <!-- Local Image - Ganti 'my-landscape.jpg' dengan nama file gambar kamu -->
-          <img 
-            src="https://rsusaifulanwar.jatimprov.go.id/wp-content/uploads/2016/09/rssa.jpg" 
-            alt="Rumah Sakit Saiful Anwar" 
-            class="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] object-cover"
-          />
-          <!-- Image Overlay -->
-          <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <div class="text-center text-white">
-              <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
-                Pemandangan Indah
-              </h3>
-              <p class="text-sm sm:text-base md:text-lg opacity-90">
-                Nikmati keindahan alam yang menakjubkan
-              </p>
+          <!-- Search Section -->
+          <div class="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">
+              Cari Layanan atau Informasi
+            </h3>
+            <div class="relative">
+              <input 
+                type="text" 
+                placeholder="Masukkan kata kunci pencarian..." 
+                class="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+              <button 
+                class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition-colors"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </button>
+            </div>
+            
+            <!-- Search Suggestions -->
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="text-sm text-gray-600">Pencarian populer:</span>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
+    <!-- Content Section -->
+    <div class="bg-gradient-to-br from-blue-50 to-indigo-100 px-4 py-12">
       <!-- Description Section -->
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
           Tentang Website Ini
         </h3>
         <p class="text-gray-600 text-base sm:text-lg leading-relaxed mb-8">
-          Website ini dibuat untuk menampilkan koleksi gambar pemandangan yang indah dan memberikan 
-          inspirasi kepada pengunjung. Setiap gambar dipilih dengan cermat untuk memberikan 
-          pengalaman visual yang menyenangkan.
+          RSUD Dr. Saiful Anwar Malang merupakan rumah sakit rujukan utama di Jawa Timur yang 
+          berkomitmen memberikan pelayanan kesehatan terbaik. Dengan teknologi medis terdepan 
+          dan tenaga medis yang berpengalaman, kami siap melayani kebutuhan kesehatan masyarakat 
+          dengan standar internasional.
         </p>
         
         <!-- Call to Action Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+          <button 
+            class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+          >
             Jelajahi Galeri
           </button>
-          <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold border-2 border-blue-600 hover:bg-blue-50 transition-all duration-200">
+          <button 
+            class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold border-2 border-blue-600 hover:bg-blue-50 transition-all duration-200"
+          >
             Pelajari Lebih Lanjut
           </button>
         </div>
@@ -62,35 +83,45 @@
         <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-200">
           <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
             </svg>
           </div>
-          <h4 class="text-xl font-semibold text-gray-800 mb-2">Galeri Foto</h4>
-          <p class="text-gray-600">Koleksi foto pemandangan berkualitas tinggi dari berbagai lokasi indah</p>
+          <h4 class="text-xl font-semibold text-gray-800 mb-2">Layanan Rawat Inap</h4>
+          <p class="text-gray-600">Fasilitas rawat inap dengan standar internasional dan perawatan 24 jam</p>
         </div>
 
         <!-- Feature 2 -->
         <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-200">
           <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
             </svg>
           </div>
-          <h4 class="text-xl font-semibold text-gray-800 mb-2">Lokasi Menarik</h4>
-          <p class="text-gray-600">Informasi lokasi dan tips untuk mengunjungi tempat-tempat indah</p>
+          <h4 class="text-xl font-semibold text-gray-800 mb-2">Layanan Darurat</h4>
+          <p class="text-gray-600">Unit Gawat Darurat siap melayani 24 jam dengan tim medis berpengalaman</p>
         </div>
 
         <!-- Feature 3 -->
         <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-200">
           <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
             </svg>
           </div>
-          <h4 class="text-xl font-semibold text-gray-800 mb-2">Panduan Travel</h4>
-          <p class="text-gray-600">Panduan lengkap untuk merencanakan perjalanan ke destinasi impian</p>
+          <h4 class="text-xl font-semibold text-gray-800 mb-2">Pendaftaran Online</h4>
+          <p class="text-gray-600">Kemudahan mendaftar secara online untuk berbagai layanan medis</p>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 </template>
+
+<style scoped>
+/* Custom styles untuk memastikan background image responsif */
+@media (max-width: 768px) {
+  .bg-cover {
+    background-size: cover;
+    background-position: center;
+  }
+}
+</style>
