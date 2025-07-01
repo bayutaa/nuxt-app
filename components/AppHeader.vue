@@ -44,9 +44,16 @@
             <NuxtLink 
               to="/login" 
               class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition"
-              :class="{ 'text-indigo-600 font-semibold': $route.path === '/login' }"
+              :class="{ 'text-indigo-600 font-semibold': $route.path === '/login' }" v-if="!user"
             >
               Login
+            </NuxtLink>
+            <NuxtLink 
+              to="/" 
+              class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition"
+              :class="{ 'text-indigo-600 font-semibold': $route.path === '/' }" v-if="user" @click="logout()"
+            >
+              Logout
             </NuxtLink>
           </div>
         </div>
@@ -76,4 +83,31 @@
 
 <script setup>
 const mobileMenuOpen = ref(false)
+
+// const statusLogin = ref(false); 
+
+const user = useState('auth.user')
+const isAuthenticated = useState('auth.isAuthenticated')
+
+if (isAuthenticated.value) {
+  console.log('User:', user.value.name)
+}
+
+const logout = () => {
+  clearAuthData();
+  navigateTo('/login');
+}
+
+const clearAuthData = () => {
+  user.value = null
+  authToken.value = null
+  isAuthenticated.value = false
+  
+  if (process.client) {
+    localStorage.removeItem('authToken')
+    localStorage.removeItem('userData')
+    sessionStorage.removeItem('currentSession')
+  }
+}
+
 </script>

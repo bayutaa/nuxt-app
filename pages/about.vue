@@ -3,7 +3,7 @@
     <!-- Header -->
     <header class="bg-white shadow-lg">
       <div class="container mx-auto px-6 py-4">
-        <h1 class="text-3xl font-bold text-indigo-800 text-center">
+        <h1 class="text-3xl font-bold text-black text-center">
           Perjalanan Sejarah RSUD Dr. Saiful Anwar
         </h1>
         <p class="text-center text-gray-600 mt-2">
